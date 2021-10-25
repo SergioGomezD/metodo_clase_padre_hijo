@@ -6,15 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./selectornumerico.component.css']
 })
 export class SelectornumericoComponent implements OnInit {
-  @Input() minimo!:number;
-  @Input() maximo!:number;
+  @Input() minimo!:number|string;
+  @Input() maximo!:number|string;
   actual!:number;
   constructor() {
   }
 
 
   ngOnInit(): void {
-    this.actual = this.minimo;
+    this.actual =Number(this.minimo);
   }
 
   incrementar() {
